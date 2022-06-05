@@ -1,0 +1,3 @@
+/*This is a file containing the build commands needed to successfly build 
+-Build command for successfully Building a single file using Boost library on windows
+g++ yourfilename.cpp  -I C:\E\SDKs\boost_1_79_0\boost_1_79_0  -o outputFilename -L"ws2_32" -lwsock32
