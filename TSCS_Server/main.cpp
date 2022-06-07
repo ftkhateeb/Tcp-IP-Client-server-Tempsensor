@@ -16,14 +16,14 @@ int main()
 {
   try
   {
-    boost::asio::io_context io_service;
+    boost::asio::io_context io_context;
 
-    tcp::acceptor acceptor(io_service, tcp::endpoint(tcp::v4(), 13));
+    tcp::acceptor acceptor(io_context, tcp::endpoint(tcp::v4(), 1337));
 
     for (;;)
     {
       std::cout<<"Accepting connections on PORT 1337\n";
-      tcp::socket socket(io_service);
+      tcp::socket socket(io_context);
       acceptor.accept(socket);
       std::cout<<"Connetion accepted\n";
       std::string message = make_daytime_string();
