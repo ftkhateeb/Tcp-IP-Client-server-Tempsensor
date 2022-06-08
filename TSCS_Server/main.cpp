@@ -2,7 +2,10 @@
 #include <iostream>
 #include <string>
 #include <boost/asio.hpp>
-
+#include <random>
+#include <string>
+#define TEMP_MAX 60
+#define TEMP_MIN 5
 using boost::asio::ip::tcp;
 
 std::string make_daytime_string()
@@ -11,7 +14,10 @@ std::string make_daytime_string()
   time_t now = time(0);
   return ctime(&now);
 }
-
+std::string TempSensor_Output (void)
+{
+  return std::to_string (((double) rand() / (RAND_MAX+1)) * (TEMP_MAX-TEMP_MIN+1) + TEMP_MIN); 
+}
 int main()
 {
   try
@@ -26,10 +32,12 @@ int main()
       tcp::socket socket(io_context);
       acceptor.accept(socket);
       std::cout<<"Connetion accepted\n";
-      std::string message = make_daytime_string();
-
+      std::string message_time = make_daytime_string();
+      std::string message_temp = TempSensor_Output();
       boost::system::error_code ignored_error;
-      boost::asio::write(socket, boost::asio::buffer(message), ignored_error);
+      boost::asio::write(socket, boost::asio::buffer(message_time), ignored_error);
+      boost::asio::write(socket, boost::asio::buffer(message_temp), ignored_error);
+
     }
   }
   catch (std::exception& e)
