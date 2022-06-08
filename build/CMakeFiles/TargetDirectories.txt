@@ -1,0 +1,11 @@
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/CMakeFiles/edit_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/CMakeFiles/rebuild_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Network/CMakeFiles/TSCS_Network.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Network/CMakeFiles/edit_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Network/CMakeFiles/rebuild_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Server/CMakeFiles/TSCS_Server.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Server/CMakeFiles/edit_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Server/CMakeFiles/rebuild_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Client/CMakeFiles/TSCS_Client.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Client/CMakeFiles/edit_cache.dir
+D:/DellTask/Tcp-IP-Client-server-Tempsensor/build/TSCS_Client/CMakeFiles/rebuild_cache.dir

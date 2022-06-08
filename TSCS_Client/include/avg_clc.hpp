@@ -12,4 +12,5 @@
 void Calc_average_5ms (std::array<char, 5> &n);
 void print_1ms(const boost::system::error_code& /*e*/,
     boost::asio::steady_timer* t, int* count);
-void Calc_average_10minute(std::array<char, 600>&n);
+int Calc_average_overtime(int new_temp);
+int Calc_accumulation_overtime(int new_temp);
