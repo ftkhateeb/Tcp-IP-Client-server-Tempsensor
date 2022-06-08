@@ -4,37 +4,19 @@
 #include <boost/bind/bind.hpp>
 #include <boost/circular_buffer.hpp>
 #include <ctime>
+#include "avg_clc.hpp"
+#include "time_clc.hpp"
 
 using boost::asio::ip::tcp;
 std::array<char, 5> C_buf;
 int C_buf_itertor = 0;
 
-std::string make_daytime_string()
-{
-  using namespace std; // For time_t, time and ctime;
-  time_t now = time(0);
-  return ctime(&now);
-}
-
-void Calc_average_5ms (  std::array<char, 5> &n)
-{
-  int average{0};
-  int sum {0};
-  for (int i = 0; i<5; i++)
-  {
-    sum+= n[i]; 
-  }
-  average = sum/5;
-  std::cout<<"**********************"<<endl;
-  std::cout<<"Average temp past 5 seconds= "<<average<<std::endl;
-  std::cout<<"**********************"<<endl; 
-
-}
 
 void print_1ms(const boost::system::error_code& /*e*/,
     boost::asio::steady_timer* t, int* count)
 {
-    boost::asio::io_context io_Context;
+    boost::asio::io_context 
+    io_Context;
     tcp::resolver resolver(io_Context);
     tcp::resolver::results_type endpoints = resolver.resolve("192.168.56.1","1337");
     tcp::socket socket(io_Context);
@@ -55,11 +37,6 @@ void print_1ms(const boost::system::error_code& /*e*/,
           throw boost::system::system_error(error); // Some other error.
         }
         std::cout<<std::endl;
-        /*C_buffer[C_buf_itertor] = *buf.data;*/
-       // std::cout<<"buffer = ";
-       // std::cout<<C_buffer[C_buf_itertor];
-       
-     
       
         C_buf[C_buf_itertor] = *buf.data();
         C_buf_itertor++;

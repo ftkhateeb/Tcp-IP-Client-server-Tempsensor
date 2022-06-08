@@ -1,13 +1,17 @@
 cmake_minimum_required(VERSION 3.19)
 project(TSCS_Client)
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp src/avg_clc.cpp src/time_clc.cpp)
 
 target_include_directories(${PROJECT_NAME}
         PUBLIC
             TSCS_Network
 )
-
+target_include_directories(${PROJECT_NAME}
+        PUBLIC
+            include/
+)
 target_link_libraries(${PROJECT_NAME}
         PUBLIC
         TSCS_Network
 )
+
