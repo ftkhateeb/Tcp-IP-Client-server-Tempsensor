@@ -1,5 +1,6 @@
 #include "avg_clc.hpp"
 
+
 void Calc_average_5ms (  std::array<char, 5> &n)
 {
   int average{0};
@@ -14,7 +15,7 @@ void Calc_average_5ms (  std::array<char, 5> &n)
   std::cout<<"**********************"<<std::endl; 
 
 }
-
+//TODO: Implement using a class
 //Moving filter algorithm is used
 int  Calc_average_overtime(int new_temp)
 {
@@ -35,11 +36,24 @@ int  Calc_average_overtime(int new_temp)
 
     }
     */
-
-
 }
-void Calc_average_10minute(std::array<char, 600>&n)
+
+//TODO: Implement using a class
+int Calc_accumulation_overtime(int new_temp)
 {
+
+    static  int accumulation {0};
+    int new_accumulation   = new_temp - PRESET_TEMP;
+    if (accumulation = 0)
+    {
+        accumulation = new_accumulation;
+    }
+    else
+    {   
+        accumulation = (accumulation + new_accumulation)/2;
+    }
+
+    return accumulation;
 
 }
 

@@ -12,11 +12,13 @@
 using boost::asio::ip::tcp;
 std::array<char, 5> C_buf;
 int C_buf_itertor = 0;
+int Scheduler = 0;
 
 
 void print_1ms(const boost::system::error_code& /*e*/,
     boost::asio::steady_timer* t, int* count)
 {
+    Scheduler ++;
     boost::asio::io_context 
     io_Context;
     tcp::resolver resolver(io_Context);

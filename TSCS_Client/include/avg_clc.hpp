@@ -6,7 +6,6 @@
 #include <boost/circular_buffer.hpp>
 
 
-#define INT_MAX 2147483647
 #define PRESET_TEMP 40
 
 
