@@ -25,8 +25,9 @@ void Calc_average_5ms (  std::array<char, 5> &n)
     sum+= n[i]; 
   }
   average = sum/5;
-
-  std::cout<<"Average temp past 5 seconds= "<<average<<std::endl; 
+  std::cout<<"**********************"<<endl;
+  std::cout<<"Average temp past 5 seconds= "<<average<<std::endl;
+  std::cout<<"**********************"<<endl; 
 
 }
 
@@ -67,7 +68,7 @@ void print_1ms(const boost::system::error_code& /*e*/,
           C_buf_itertor = 0;
           Calc_average_5ms(C_buf);
         }
-        std::cout<<"recieved temprature at:"<<make_daytime_string<<"=";
+        std::cout<<"recieved temprature at:"<<make_daytime_string()<<"=";
         std::cout.write(buf.data(), len);
    
     }
