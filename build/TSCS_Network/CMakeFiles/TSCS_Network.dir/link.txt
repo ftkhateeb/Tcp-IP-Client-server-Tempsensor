@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libTSCS_Network.a CMakeFiles/TSCS_Network.dir/src/Base.cpp.obj
+C:\MinGW\bin\ranlib.exe libTSCS_Network.a
