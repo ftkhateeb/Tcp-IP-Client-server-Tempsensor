@@ -1,0 +1,6 @@
+Can't find a host
+>> search for your local IP adress and pass it as an argument for the client
+
+Permission denied while creating Server executable
+>> Close any cmd that is currently running previois Server app.
+
