@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <boost/array.hpp>
 #include <boost/asio.hpp>
 #include <boost/bind/bind.hpp>
@@ -8,14 +9,15 @@
 #include "time_clc.hpp"
 
 
-
 using boost::asio::ip::tcp;
 std::array<char, 5> C_buf;
 int C_buf_itertor = 0;
 int Scheduler = 0;
+std::string var;
+int int_var = 0;
 
-
-void print_1ms(const boost::system::error_code& /*e*/,
+/*Function that gets called every one sec using ASIO_Asyncwait*/
+void print_1s(const boost::system::error_code& /*e*/,
     boost::asio::steady_timer* t, int* count)
 {
     Scheduler ++;
@@ -49,6 +51,9 @@ void print_1ms(const boost::system::error_code& /*e*/,
           C_buf_itertor = 0;
           Calc_average_5ms(C_buf);
         }
+        var = buf.data();
+        int_var = std::stoi(var);
+        
         std::cout<<"recieved temprature at:"<<make_daytime_string()<<"=";
         std::cout.write(buf.data(), len);
    
@@ -59,7 +64,7 @@ void print_1ms(const boost::system::error_code& /*e*/,
       ++(*count);
 
       t->expires_at(t->expiry() + boost::asio::chrono::seconds(1));
-      t->async_wait(boost::bind(print_1ms,
+      t->async_wait(boost::bind(print_1s,
             boost::asio::placeholders::error, t, count));
     }
 }
@@ -70,7 +75,7 @@ int main(int argc, char* argv[])
 
   int count = 0;
   boost::asio::steady_timer t(io, boost::asio::chrono::seconds(1));
-  t.async_wait(boost::bind(print_1ms,
+  t.async_wait(boost::bind(print_1s,
         boost::asio::placeholders::error, &t, &count));
 
   io.run();

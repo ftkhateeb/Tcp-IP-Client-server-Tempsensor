@@ -15,6 +15,7 @@ void Calc_average_5ms (  std::array<char, 5> &n)
   std::cout<<"**********************"<<std::endl; 
 
 }
+
 //TODO: Implement using a class
 //Moving filter algorithm is used
 int  Calc_average_overtime(int new_temp)
@@ -42,7 +43,7 @@ int  Calc_average_overtime(int new_temp)
 int Calc_accumulation_overtime(int new_temp)
 {
 
-    static  int accumulation {0};
+    static int accumulation {0};
     int new_accumulation   = new_temp - PRESET_TEMP;
     if (accumulation = 0)
     {
