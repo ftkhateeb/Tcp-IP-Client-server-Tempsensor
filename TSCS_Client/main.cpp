@@ -7,6 +7,8 @@
 #include "avg_clc.hpp"
 #include "time_clc.hpp"
 
+
+
 using boost::asio::ip::tcp;
 std::array<char, 5> C_buf;
 int C_buf_itertor = 0;

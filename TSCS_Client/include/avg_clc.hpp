@@ -5,6 +5,11 @@
 #include <boost/bind/bind.hpp>
 #include <boost/circular_buffer.hpp>
 
+
+#define INT_MAX 2147483647
+#define PRESET_TEMP 40
+
+
 void Calc_average_5ms (std::array<char, 5> &n);
 void print_1ms(const boost::system::error_code& /*e*/,
     boost::asio::steady_timer* t, int* count);
