@@ -20,7 +20,7 @@ static int ACC = 0;//variable to hold the AVG over time
 void print_1s(const boost::system::error_code& /*e*/,
     boost::asio::steady_timer* t, int* count)
 {
-    Scheduler ++;
+    Scheduler ++;//Increment Scheduler every one sec (every callback)
     //ASIO's Io_context : abstraction for all IO finctionalities
     boost::asio::io_context 
     io_Context;
