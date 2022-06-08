@@ -4,7 +4,7 @@
 #include <boost/asio.hpp>
 #include <random>
 #include <string>
-#define TEMP_MAX 60
+#define TEMP_MAX 100
 #define TEMP_MIN 5
 using boost::asio::ip::tcp;
 
@@ -32,10 +32,10 @@ int main()
       tcp::socket socket(io_context);
       acceptor.accept(socket);
       std::cout<<"Connetion accepted\n";
-      std::string message_time = make_daytime_string();
+      //std::string message_time = make_daytime_string();
       std::string message_temp = TempSensor_Output();
       boost::system::error_code ignored_error;
-      boost::asio::write(socket, boost::asio::buffer(message_time), ignored_error);
+      //boost::asio::write(socket, boost::asio::buffer(message_time), ignored_error);
       boost::asio::write(socket, boost::asio::buffer(message_temp), ignored_error);
 
     }
